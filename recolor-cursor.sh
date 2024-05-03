@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# Safety options
-set -o errtrace \
-  -o errexit \
-  -o nounset \
-  -o xtrace \
-  -o pipefail
-
 readonly DEFAULT_ACCENT_COLOR="#79f5f3"       # Cyan accents
 readonly DEFAULT_BASE_COLOR="#192629"         # Dark filled-in spots
 readonly DEFAULT_BORDER_COLOR="#666666"       # grey border
@@ -16,7 +9,7 @@ readonly DEFAULT_X_LOGO_COLOR="#fcfcfc"       # white X in X logo
 print_usage() {
   cat <<EOF
     $(basename "$0") -- script for recoloring the Breeze Hacked cursor theme's source svg file
-  
+
     USAGE:
       ./$(basename "$0") [OPTIONS]
 

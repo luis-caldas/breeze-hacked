@@ -6,16 +6,15 @@ all: clean build
 .PHONY: install
 install: build
 	@mkdir -p ~/.icons
-	@cp -r Breeze_Hacked ~/.icons/Breeze_Hacked
+	@cp -r result/share/icons/* ~/.icons/.
 	@echo ::: INSTALL :::
 
 .PHONY: build
-build: Breeze_Hacked
+build:
+	@nix-build
 	@echo ::: BUILD :::
 
 .PHONY: clean
-	-@rm -rf build Breeze_Hacked &>/dev/null | true
+clean:
+	@unlink result
 	@echo ::: CLEAN :::
-
-Breeze_Hacked:
-	@./build.sh
